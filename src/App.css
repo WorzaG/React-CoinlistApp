@@ -1,0 +1,77 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  list-style: none;
+  outline: 0;
+  background: linear-gradient(
+    rgb(248, 250, 253) 0%,
+    rgba(248, 250, 253, 0) 413px
+  );
+}
+.app {
+  width: auto;
+  height: auto;
+}
+.List {
+  width: 860px;
+  margin: auto;
+}
+.List .listinfo ul {
+  display: flex;
+  padding: 10px;
+  color: rgb(78, 78, 78);
+}
+.List .listinfo ul .details {
+  margin-left: 210px;
+}
+.List .listinfo ul .details li {
+  padding: 10px 51px;
+}
+.List .listinfo ul .details,
+.general {
+  display: flex;
+}
+.List .listinfo {
+  border-bottom: 1px solid #ccc;
+}
+.List .listinfo ul li {
+  padding: 10px;
+}
+.coin {
+  width: auto;
+  height: 60px;
+  padding: 10px 0;
+  border-bottom: 0.5px solid #ccc;
+}
+.coin:hover {
+  background-color: rgba(54, 206, 196, 0.301);
+}
+.coin ul .veriler {
+  display: flex;
+}
+.coin ul .veriler li {
+  width: 100px;
+  padding: 0 20px;
+}
+.coin ul {
+  display: flex;
+  align-items: center;
+}
+.coin ul .info {
+  display: flex;
+  width: 300px;
+  align-items: center;
+  padding: 10px;
+}
+.coin ul .info img {
+  width: 34px;
+  border-radius: 50%;
+  padding: 0 25px;
+}
+.coin ul .info .symbol {
+  color: rgb(126, 126, 126);
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
