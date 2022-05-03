@@ -4,7 +4,7 @@ import Coin from "./Coin";
 
 export default function CoinList() {
   const [data, setData] = useState([]);
-
+  const [search, setSearch] = useState("");
   const fetchdata = () => {
     axios
       .get(
@@ -20,6 +20,14 @@ export default function CoinList() {
 
   return (
     <div className="List">
+      <form>
+        <input
+          type="text"
+          name="search"
+          placeholder="search.."
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </form>
       <div className="listinfo">
         <ul>
           <div className="general">
@@ -34,17 +42,27 @@ export default function CoinList() {
         </ul>
       </div>
       <>
-        {data.map((items) => (
-          <Coin
-            name={items.name}
-            image={items.image}
-            rank={items.market_cap_rank}
-            currentprice={items.current_price}
-            symbol={items.symbol}
-            marketcap={items.market_cap}
-            pricepercentage24h={items.price_change_percentage_24h}
-          />
-        ))}
+        {data
+          .filter((items) => {
+            if (search == "") {
+              return items;
+            } else if (
+              items.name.toLowerCase().includes(search.toLowerCase())
+            ) {
+              return items;
+            }
+          })
+          .map((items) => (
+            <Coin
+              name={items.name}
+              image={items.image}
+              rank={items.market_cap_rank}
+              currentprice={items.current_price}
+              symbol={items.symbol}
+              marketcap={items.market_cap}
+              pricepercentage24h={items.price_change_percentage_24h}
+            />
+          ))}
       </>
     </div>
   );
